@@ -58,4 +58,14 @@ def update_data():
     mydb.commit()
     print(mycursor.rowcount, "linha(s) alterada(s)!")
 
-update_data()
+#update_data()
+
+def delete_data():
+    sql = "Delete From alunos Where id = '7'"
+    mycursor.execute(sql)
+    mydb.commit()
+    print(mycursor.rowcount, "linha(s) deletada(s).")
+
+opcao = input("Deseja excluir o aluno José Vinícius (S/N)? ")
+if opcao == 'S':
+    delete_data()
