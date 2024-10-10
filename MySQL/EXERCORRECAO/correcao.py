@@ -38,4 +38,15 @@ def insert_data():
     mycursor.executemany(sql,val)
     mydb.commit()
     print(mycursor.rowcount, "linha(s) alterada(s)!")
-insert_data()
+#insert_data()
+
+def select_data():
+    #sql = "Select * From alunos Order By matricula"
+    #sql = "Select nome, matricula From alunos Where turma = 'BCW23' Order By matricula"
+    sql = "Select nome From alunos Where nome Like '%Lima%' Order By matricula"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    for x in myresult:
+        print(x)
+
+select_data()
