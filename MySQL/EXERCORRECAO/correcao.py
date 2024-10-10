@@ -49,4 +49,13 @@ def select_data():
     for x in myresult:
         print(x)
 
-select_data()
+#select_data()
+
+def update_data():
+    mycursor = mydb.cursor()
+    sql = "Update alunos Set turma = 'BCW25' Where id = '2'"
+    mycursor.execute(sql)
+    mydb.commit()
+    print(mycursor.rowcount, "linha(s) alterada(s)!")
+
+update_data()
